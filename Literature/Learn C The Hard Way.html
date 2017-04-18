@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<!-- saved from url=(0089)https://web.archive.org/web/20160410080123/http://c.learncodethehardway.org/book/ex5.html -->
+<html class="no-js" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<script id="twitter-wjs" src="./Learn C The Hard Way_files/widgets.js"></script><script type="text/javascript" src="./Learn C The Hard Way_files/analytics.js"></script>
+<script type="text/javascript">archive_analytics.values.server_name="wwwb-app11.us.archive.org";archive_analytics.values.server_ms=261;</script>
+<link type="text/css" rel="stylesheet" href="./Learn C The Hard Way_files/banner-styles.css">
+
+
+        <link href="./Learn C The Hard Way_files/fonts.css" rel="stylesheet" type="text/css">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="twitter:creator" content="@lzsthw">
+        <title>Learn C The Hard Way</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="./Learn C The Hard Way_files/pure.css" rel="stylesheet">
+        <link href="./Learn C The Hard Way_files/pygments.css" rel="stylesheet">
+        <link href="./Learn C The Hard Way_files/main.css" rel="stylesheet">
+        <link href="./Learn C The Hard Way_files/nav.css" rel="stylesheet">
+        <style>
+        </style>
+ 
+        
+<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/">
+<title>Exercise 5: The Structure Of A C Program</title>
+    <script type="text/javascript" charset="utf-8" async="" src="./Learn C The Hard Way_files/button.9c9dd7044dfaf420ee068697fbf32302.js"></script></head>
+    <body id="wrapper"><div id="wm-ipp" lang="en" style="display: block;">
+
+<div style="position:fixed;left:0;top:0;width:100%!important">
+<div id="wm-ipp-inside">
+   <table style="width:100%;"><tbody><tr>
+   <td id="wm-logo">
+       <a href="https://web.archive.org/web/" title="Wayback Machine home page"><img src="./Learn C The Hard Way_files/wayback-toolbar-logo.png" alt="Wayback Machine" width="110" height="39" border="0"></a>
+   </td>
+   <td class="c">
+       <table style="margin:0 auto;"><tbody><tr>
+       <td class="u" colspan="2">
+       <form target="_top" method="get" action="https://web.archive.org/web/form-submit.jsp" name="wmtb" id="wmtb"><input type="text" name="url" id="wmtbURL" value="http://c.learncodethehardway.org/book/ex5.html" style="width:400px;" onfocus="this.focus();this.select();"><input type="hidden" name="type" value="replay"><input type="hidden" name="date" value="20160410080123"><input type="submit" value="Go"><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td class="n" rowspan="2">
+           <table><tbody>
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr class="m">
+           	<td class="b" nowrap="nowrap">
+		
+		    <a href="https://web.archive.org/web/20160309165216/http://c.learncodethehardway.org/book/ex5.html" title="9 Mar 2016">MAR</a>
+		
+		</td>
+		<td class="c" id="displayMonthEl" title="You are here: 8:01:23 Apr 10, 2016">APR</td>
+		<td class="f" nowrap="nowrap">
+		
+		    May
+		
+                </td>
+	    </tr>
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr class="d">
+               <td class="b" nowrap="nowrap">
+               
+                   <a href="https://web.archive.org/web/20160324033306/http://c.learncodethehardway.org/book/ex5.html" title="3:33:06 Mar 24, 2016"><img src="./Learn C The Hard Way_files/wm_tb_prv_on.png" alt="Previous capture" width="14" height="16" border="0"></a>
+               
+               </td>
+               <td class="c" id="displayDayEl" style="width:34px;font-size:24px;" title="You are here: 8:01:23 Apr 10, 2016">10</td>
+	       <td class="f" nowrap="nowrap">
+               
+                   <img src="./Learn C The Hard Way_files/wm_tb_nxt_off.png" alt="Next capture" width="14" height="16" border="0">
+               
+	       </td>
+           </tr>
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr class="y">
+	       <td class="b" nowrap="nowrap">
+               
+                   <a href="https://web.archive.org/web/20150407100940/http://c.learncodethehardway.org/book/ex5.html" title="7 Apr 2015"><strong>2015</strong></a>
+               
+               </td>
+               <td class="c" id="displayYearEl" title="You are here: 8:01:23 Apr 10, 2016">2016</td>
+	       <td class="f" nowrap="nowrap">
+               
+                   2017
+               
+	       </td>
+           </tr>
+           </tbody></table>
+       </td>
+       </tr>
+       <tr>
+       <td class="s">
+           <a class="t" href="https://web.archive.org/web/20160410080123*/http://c.learncodethehardway.org/book/ex5.html" title="See a list of every capture for this URL">56 captures</a>
+           <div class="r" title="Timespan for captures of this URL">13 Jan 13 - 10 Apr 16</div>
+       </td>
+       <td class="k">
+       <a href="https://web.archive.org/web/20160410080123/http://c.learncodethehardway.org/book/ex5.html" id="wm-graph-anchor">
+       <div id="wm-ipp-sparkline" title="Explore captures for this URL">
+	 <img id="sparklineImgId" alt="sparklines" onmouseover="__wm.st(1)" onmouseout="__wm.st(0)" onmousemove="__wm.mv(event,this)" width="525" height="27" border="0" src="./Learn C The Hard Way_files/graph.jsp">
+       <div class="yt" style="display: none; width: 25px; height: 27px;"></div><div class="mt" style="display: none; width: 2px; height: 27px;"></div></div>
+       </a>
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td class="r">
+       <a href="https://web.archive.org/web/20160410080123/http://c.learncodethehardway.org/book/ex5.html#close" onclick="__wm.h();return false;" style="background-image:url(/static/images/toolbar/wm_tb_close.png);top:5px;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="background-image:url(/static/images/toolbar/wm_tb_help.png);bottom:5px;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+</div>
+</div>
+</div>
+
+
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script type="text/javascript" src="./Learn C The Hard Way_files/disclaim-element.js"></script>
+<script type="text/javascript" src="./Learn C The Hard Way_files/graph-calc.js"></script>
+<script type="text/javascript">//<![CDATA[
+var __wm = (function(imgWidth,imgHeight,yearImgWidth,monthImgWidth){
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http://c.learncodethehardway.org/book/ex5.html";
+
+var firstYear = 1996;
+var displayDay = "10";
+var displayMonth = "Apr";
+var displayYear = "2016";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+var $D=document,$=function(n){return document.getElementById(n)};
+var trackerVal,curYear = -1,curMonth = -1;
+var yearTracker,monthTracker;
+function showTrackers(val) {
+  if (val===trackerVal) return;
+  var $ipp=$("wm-ipp");
+  var $y=$("displayYearEl"),$m=$("displayMonthEl"),$d=$("displayDayEl");
+  if (val) {
+    $ipp.className="hi";
+  } else {
+    $ipp.className="";
+    $y.innerHTML=displayYear;$m.innerHTML=displayMonth;$d.innerHTML=displayDay;
+  }
+  yearTracker.style.display=val?"inline":"none";
+  monthTracker.style.display=val?"inline":"none";
+  trackerVal = val;
+}
+function trackMouseMove(event,element) {
+  var eventX = getEventX(event);
+  var elementX = getElementX(element);
+  var xOff = Math.min(Math.max(0, eventX - elementX),imgWidth);
+  var monthOff = xOff % yearImgWidth;
+
+  var year = Math.floor(xOff / yearImgWidth);
+  var monthOfYear = Math.min(11,Math.floor(monthOff / monthImgWidth));
+  // 1 extra border pixel at the left edge of the year:
+  var month = (year * 12) + monthOfYear;
+  var day = monthOff % 2==1?15:1;
+  var dateString = zeroPad(year + firstYear) + zeroPad(monthOfYear+1,2) +
+    zeroPad(day,2) + "000000";
+
+  $("displayYearEl").innerHTML=year+firstYear;
+  $("displayMonthEl").innerHTML=prettyMonths[monthOfYear];
+  // looks too jarring when it changes..
+  //$("displayDayEl").innerHTML=zeroPad(day,2);
+  var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+  $("wm-graph-anchor").href=url;
+
+  if(curYear != year) {
+    var yrOff = year * yearImgWidth;
+    yearTracker.style.left = yrOff + "px";
+    curYear = year;
+  }
+  if(curMonth != month) {
+    var mtOff = year + (month * monthImgWidth) + 1;
+    monthTracker.style.left = mtOff + "px";
+    curMonth = month;
+  }
+}
+function hideToolbar() {
+  $("wm-ipp").style.display="none";
+}
+function bootstrap() {
+  var $spk=$("wm-ipp-sparkline");
+  yearTracker=$D.createElement('div');
+  yearTracker.className='yt';
+  with(yearTracker.style){
+    display='none';width=yearImgWidth+"px";height=imgHeight+"px";
+  }
+  monthTracker=$D.createElement('div');
+  monthTracker.className='mt';
+  with(monthTracker.style){
+    display='none';width=monthImgWidth+"px";height=imgHeight+"px";
+  }
+  $spk.appendChild(yearTracker);
+  $spk.appendChild(monthTracker);
+
+  var $ipp=$("wm-ipp");
+  $ipp&&disclaimElement($ipp);
+}
+return{st:showTrackers,mv:trackMouseMove,h:hideToolbar,bt:bootstrap};
+})(525, 27, 25, 2);//]]>
+</script>
+<style type="text/css">
+body {
+  margin-top:0 !important;
+  padding-top:0 !important;
+  min-width:800px !important;
+}
+</style>
+
+<script type="text/javascript">__wm.bt();</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+        <div class="master-logo-wrapper clearfix">
+            <a href="https://web.archive.org/web/20160410080123/http://c.learncodethehardway.org/book/index.html">
+                <div class="master-logo-sprite"></div>
+            </a>
+                <span class="edition-3"><img src="./Learn C The Hard Way_files/beta-edition-cloud.png"></span>
+        </div><!-- /.master-logo-wrapper -->
+
+        <div style="clear: both;">
+
+        <div id="main">
+            <div class="chapters-wrapper">
+                  <nav id="chapters">
+                      <div class="masthead-title"></div>
+                      <ul class="masthead">
+                          <li>
+                              <a href="https://web.archive.org/web/20160410080123/http://c.learncodethehardway.org/book/">
+                                  <div class="nav-tcontents">
+                                      <img src="./Learn C The Hard Way_files/nav-contents.png"><br>
+                                  main
+                                  </div>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="https://web.archive.org/web/20160410080123/http://c.learncodethehardway.org/book/ex4.html" id="prev_link">
+                                  <div class="nav-previous">
+                                      <img src="./Learn C The Hard Way_files/nav-previous.png"><br>
+                                      previous
+                                  </div>
+                              </a>
+                          </li>
+                          <li>
+                              <a href="https://web.archive.org/web/20160410080123/http://c.learncodethehardway.org/book/ex6.html" id="next_link">
+                                  <div class="nav-next">
+                                      <img src="./Learn C The Hard Way_files/nav-next.png"><br>
+                                      next
+                                  </div>
+                              </a>
+                          </li>
+                          <li><!-- AMBULANCE ICON -->
+                              <a href="https://web.archive.org/web/20160410080123/http://c.learncodethehardway.org/book/help.html" id="">
+                                  <div class="ambulance">
+                                      <img src="./Learn C The Hard Way_files/help-ambulance.png"><br>
+                                      help
+                                  </div>
+                              </a>
+                          </li>
+                          <li id="follow">
+                                <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-follow-button twitter-follow-button-rendered" title="Twitter Follow Button" src="./Learn C The Hard Way_files/follow_button.d59f1863bc12f58215682d9908af95aa.en.html" style="position: static; visibility: visible; width: 63px; height: 20px;" data-screen-name="lzsthw"></iframe>
+                                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                           </li>
+
+                      </ul><!-- /.masthead -->
+                      <!--<img src='images/fa-bullhorn.png' />-->
+                  </nav><!-- /.chapters -->
+            </div><!-- /.chapters-wrapper -->
+
+        <!--- RST STARTS -->
+            <h1 class="title">Exercise 5: The Structure Of A C Program</h1>
+            <p>You know how to use <tt class="docutils literal">printf</tt> and have a couple basic tools at your disposal,
+so let's break down a simple C program line-by-line so you know how one is
+structured.  In this program you're going to type in a few more things that
+you're unfamiliar with, and I'm going to lightly break them down.  Then in the
+next few exercises we're going to work with these concepts.</p>
+<div class="highlight"><pre><a name="code--ex5.c-pyg.html-1"></a><span class="cp">#include &lt;stdio.h&gt;</span>
+<a name="code--ex5.c-pyg.html-2"></a>
+<a name="code--ex5.c-pyg.html-3"></a><span class="cm">/* This is a comment. */</span>
+<a name="code--ex5.c-pyg.html-4"></a><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+<a name="code--ex5.c-pyg.html-5"></a><span class="p">{</span>
+<a name="code--ex5.c-pyg.html-6"></a>    <span class="kt">int</span> <span class="n">distance</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+<a name="code--ex5.c-pyg.html-7"></a>
+<a name="code--ex5.c-pyg.html-8"></a>    <span class="c1">// this is also a comment</span>
+<a name="code--ex5.c-pyg.html-9"></a>    <span class="n">printf</span><span class="p">(</span><span class="s">"You are %d miles away.</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">distance</span><span class="p">);</span>
+<a name="code--ex5.c-pyg.html-10"></a>
+<a name="code--ex5.c-pyg.html-11"></a>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<a name="code--ex5.c-pyg.html-12"></a><span class="p">}</span>
+</pre></div><p>Type this code in, make it run, and make sure you get <em>no Valgrind errors</em>.
+You probably won't but get in the habit of checking it.</p>
+<div class="section" id="what-you-should-see">
+<h1>What You Should See</h1>
+<p>This has pretty boring output, but the point of this exercise is to analyze the
+code:</p>
+<div class="highlight"><pre><a name="code--ex5.sh-session-pyg.html-1"></a><span class="gp">$</span> make ex5
+<a name="code--ex5.sh-session-pyg.html-2"></a><span class="go">cc -Wall -g    ex5.c   -o ex5</span>
+<a name="code--ex5.sh-session-pyg.html-3"></a><span class="gp">$</span> ./ex5
+<a name="code--ex5.sh-session-pyg.html-4"></a><span class="go">You are 100 miles away.</span>
+<a name="code--ex5.sh-session-pyg.html-5"></a><span class="gp">$</span>
+</pre></div></div>
+<div class="section" id="breaking-it-down">
+<h1>Breaking It Down</h1>
+<p>There's a few features of the C language in this code that you might have only
+slightly figured out while you were typing code.  Let's break this down
+line-by-line quickly, and then we can do exercises to understand each part
+better:</p>
+<dl class="docutils">
+<dt>ex5.c:1</dt>
+<dd>An <tt class="docutils literal">include</tt> and it is the way to import the contents
+of one file into this source file.  C has a convention of using
+<tt class="docutils literal">.h</tt> extensions for "header" files, which then contain lists
+of functions you want to use in your program.</dd>
+<dt>ex5.c:3</dt>
+<dd>This is a multi-line <tt class="docutils literal">comment</tt> and you could put as many
+lines of text between the <tt class="docutils literal">/*</tt> and closing <tt class="docutils literal">*/</tt> characters as you want.</dd>
+<dt>ex5.c:4</dt>
+<dd>A more complex version of the <tt class="docutils literal">main function</tt> you've
+been using blindly so far.  How C programs work is the operating system
+loads your program, and then runs the function named <tt class="docutils literal">main</tt>.
+For the function to be totally complete it needs to return an <tt class="docutils literal">int</tt>
+and take two parameters, an <tt class="docutils literal">int</tt> for the argument count, and
+an array of <tt class="docutils literal">char *</tt> strings for the arguments.  Did that
+just fly over your head?  Do not worry, we'll cover this soon.</dd>
+<dt>ex5.c:5</dt>
+<dd>To start the body of any function you write a <tt class="docutils literal">{</tt> character
+that indicates the beginning of a "block".  In Python you just
+did a <tt class="docutils literal">:</tt> and indented. In other languages you might have a
+<tt class="docutils literal">begin</tt> or <tt class="docutils literal">do</tt> word to start.</dd>
+<dt>ex5.c:6</dt>
+<dd>A variable declaration and assignment at the same time.
+This is how you create a variable, with the syntax <tt class="docutils literal">type name = value;</tt>.
+In C statements (except for logic) end in a <tt class="docutils literal">';'</tt> (semicolon) character.</dd>
+<dt>ex5.c:8</dt>
+<dd>Another kind of comment, and it works like Python or
+Ruby comments where it starts at the <tt class="docutils literal">//</tt> and goes until the end of
+the line.</dd>
+<dt>ex5.c:9</dt>
+<dd>A call to your old friend <tt class="docutils literal">printf</tt>.  Like in many languages
+function calls work with the syntax <tt class="docutils literal">name(arg1, arg2);</tt> and can have
+no arguments, or any number.  The <tt class="docutils literal">printf</tt> function is actually
+kind of weird and can take multiple arguments. We'll see that later.</dd>
+<dt>ex5.c:11</dt>
+<dd>A return from the main function, which gives the OS your exit
+value.  You may not be familiar with how Unix software uses return
+codes, so we'll cover that as well.</dd>
+<dt>ex5.c:12</dt>
+<dd>Finally, we end the main function with a closing brace <tt class="docutils literal">}</tt>
+character and that's the end of the program.</dd>
+</dl>
+<p>There's a lot of information in this break-down, so study it line-by-line
+and make sure you at least have a little grasp of what's going on.  You
+won't know everything, but you can probably guess before we continue.</p>
+</div>
+<div class="section" id="extra-credit">
+<h1>Extra Credit</h1>
+<ul class="simple">
+<li>For each line, write out the symbols you don't understand and
+see if you can guess what they mean.  Write a little chart on
+paper with your guess that you can use to check later and see
+if you get it right.</li>
+<li>Go back to the source code from the previous exercises and
+do a similar break-down to see if you're getting it.  Write down
+what you don't know and can't explain to yourself.</li>
+</ul>
+</div>
+        <!-- RST ENDS -->
+
+        </div><!-- /#main -->
+
+        <div class="ad-deck gold" id="footer">
+            <ul class="retailers clearfix">
+                <li>
+                    <a href="https://web.archive.org/web/20160410080123/http://learnpythonthehardway.org/">
+                        <div class="retailer-name">Interested In Python?</div>
+                        <div class="book-type">Python is also a great language.</div>
+                        <div class="book-price">Learn Python The Hard Way</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://web.archive.org/web/20160410080123/http://learnrubythehardway.org/book/">
+                        <div class="retailer-name">Interested In Ruby?</div>
+                        <div class="book-type">Ruby is also a great language.</div>
+                        <div class="book-price">Learn Ruby The Hard Way</div>
+                    </a>
+                </li>
+
+            </ul><!-- /.places -->
+        </div><!-- /#ad-deck -->
+
+        <script src="./Learn C The Hard Way_files/jquery.js"></script>
+        <script src="./Learn C The Hard Way_files/index.js"></script>
+        <script src="./Learn C The Hard Way_files/jzed.js"></script>
+        <script src="./Learn C The Hard Way_files/app.js"></script>
+        
+
+
+
+
+
+
+<!--
+     FILE ARCHIVED ON 8:01:23 Apr 10, 2016 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:36:00 Sep 16, 2016.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+</div><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" src="./Learn C The Hard Way_files/saved_resource.html"></iframe></body></html>

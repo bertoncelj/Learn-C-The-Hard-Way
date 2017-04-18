@@ -1,0 +1,9 @@
+Include: 
+    1.#include <assart.h>
+        allows diagnostic inforamtion to be written to the standard error file. Adds diagnostic part to your program.
+        DECALRAION: void assart (int expression);
+        PARAMETERS: expression- this can be variable or any c expression. 
+        If expression can be evaluates by TRUE, assart does nothing. If does not hold up, assart shows message
+        on stderr(standart error steam desplay message) and aborst the program.
+        
+        
